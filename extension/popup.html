@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TAU Moodle Calendar Sync</title>
+    <style>
+      body {
+        width: 320px;
+        margin: 0;
+        padding: 14px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: #0f172a;
+        background: #f8fafc;
+      }
+      .header {
+        background: linear-gradient(135deg, #0b1f3a, #1d4e89);
+        color: #fff;
+        padding: 12px 14px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 15px;
+      }
+      .header p {
+        margin: 3px 0 0;
+        font-size: 11px;
+        opacity: 0.85;
+      }
+      label {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        color: #334155;
+        margin: 8px 0 4px;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 7px 9px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 12px;
+        font-family: ui-monospace, monospace;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      button {
+        flex: 1;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: #0f294a;
+        color: #fff;
+      }
+      .btn-secondary {
+        background: #e2e8f0;
+        color: #0f172a;
+      }
+      .status {
+        margin-top: 10px;
+        padding: 8px 10px;
+        border-radius: 8px;
+        font-size: 12px;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+      }
+      a {
+        color: #0369a1;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>TAU Moodle Calendar Sync</h1>
+      <p>Auto-syncs problem set completion status</p>
+    </div>
+
+    <label for="appOrigin">App Server URL</label>
+    <input id="appOrigin" type="url" placeholder="https://your-app.workers.dev" />
+
+    <label for="dashboardToken">Workspace Token</label>
+    <input id="dashboardToken" type="text" placeholder="Paste token from Moodle Connector tab" />
+
+    <div class="row">
+      <button id="saveBtn" class="btn-secondary">Save</button>
+      <button id="syncBtn" class="btn-primary">Sync Current Tab</button>
+    </div>
+
+    <div id="statusBox" class="status">Ready.</div>
+    <div style="margin-top: 10px; text-align: center;">
+      <a id="openDashboard" href="#" target="_blank">Open Problem Set Dashboard →</a>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
